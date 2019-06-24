@@ -54,13 +54,12 @@ function searchMovies(searchTerm, callback) {
 function render() {
 
   // clear everything
-  $("#section-watchlist ul").empty();
-  $("#section-browse ul").empty();
+  $("ul").empty();
 
   // insert watchlist items
   model.watchlistItems.forEach(function(movie) {
-    var title = $("<p></p>").text(movie.original_title);
-    var itemView = $("<li></li>")
+    var title = $("<p/>").text(movie.original_title);
+    var itemView = $("<li/>")
       .append(title)
       // TODO 3
       // give itemView a class attribute of "item-watchlist"
@@ -70,8 +69,8 @@ function render() {
 
   // insert browse items
   model.browseItems.forEach(function(movie) {
-    var title = $("<h4></h4>").text(movie.original_title);
-    var button = $("<button></button>")
+    var title = $("<h4/>").text(movie.original_title);
+    var button = $("<button/>")
       .text("Add to Watchlist")
       .click(function() {
         model.watchlistItems.push(movie);
@@ -90,7 +89,7 @@ function render() {
 
 
     // append everything to itemView, along with an <hr/>
-    var itemView = $("<li></li>")
+    var itemView = $("<li/>")
       .append($("<hr/>"))
       .append(title)
       .append(button);
