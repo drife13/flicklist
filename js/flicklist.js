@@ -38,19 +38,19 @@ function discoverMovies(callback) {
  * re-renders the page with new content, based on the current state of the model
  */
 function render() {
-  // TODO 7
-  // clear everything from both lists
-  $('ul').empty();
-  
-  // TODO 6
-  // for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
-  model.watchlistItems.forEach(function(movie) {
+	// TODO 7
+	// clear everything from both lists
+	$('ul').empty();
+
+	// TODO 6
+	// for each movie on the user's watchlist, insert a list item into the <ul> in the watchlist section
+	model.watchlistItems.forEach(function(movie) {
 		let listItem = $('<li/>').prop('id', movie.id).append($('<p/>').html(movie.title));
 		$('#section-watchlist ul').append(listItem);
-  });
+	});
 
-  // for each movie on the current browse list, 
-  model.browseItems.forEach(function(movie) {
+	// for each movie on the current browse list, 
+	model.browseItems.forEach(function(movie) {
 		// TODO 3
 		// insert a list item into the <ul> in the browse section
 		let listItem = $('<li/>').prop('id', movie.id).append($('<p/>').html(movie.title));
@@ -69,8 +69,7 @@ function render() {
 				render();
 			}
 		});
-  });
-  
+	});
 }
 
 // When the HTML document is ready, we call the discoverMovies function,
