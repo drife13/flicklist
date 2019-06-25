@@ -1,16 +1,11 @@
-
-
 var model = {
   watchlistItems: [],
   browseItems: []
 }
 
-
 var api = {
-
   root: "https://api.themoviedb.org/3",
-  token: "TODO", // TODO 0 add your api key
-
+  token: "6bc417d7c2dbb0e47a7aa89579192dce", // TODO 0 add your api key
   /**
    * Given a movie object, returns the url to its poster image
    */
@@ -21,7 +16,6 @@ var api = {
     return "http://images5.fanpop.com/image/photos/25100000/movie-poster-rapunzel-and-eugene-25184488-300-450.jpg" 
   }
 }
-
 
 /**
  * Makes an AJAX request to themoviedb.org, asking for some movies
@@ -41,7 +35,6 @@ function discoverMovies(callback) {
     }
   });
 }
-
 
 /**
  * Makes an AJAX request to the /search endpoint of the API, using the 
@@ -64,7 +57,6 @@ function searchMovies(query, callback) {
   });
 }
 
-
 /**
  * re-renders the page with new content, based on the current state of the model
  */
@@ -76,7 +68,7 @@ function render() {
 
   // insert watchlist items
   model.watchlistItems.forEach(function(movie) {
-    var title = $("<h6></h6>").text(movie.original_title);
+    var title = $("<h6/>").text(movie.original_title);
 
     // TODO 1 
     // add an "I watched it" button and append it below the title
@@ -91,7 +83,7 @@ function render() {
 
     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
-    var itemView = $("<li></li>")
+    var itemView = $("<li/>")
       .append(title)
       .attr("class", "item-watchlist");
 
@@ -107,7 +99,7 @@ function render() {
     // use the following BS classes:
     // "list-group", "list-group-item", btn", "btn-primary", 
 
-    var title = $("<h4></h4>").text(movie.original_title);
+    var title = $("<h4/>").text(movie.original_title);
 
     var button = $("<button></button>")
       .text("Add to Watchlist")
@@ -117,10 +109,10 @@ function render() {
       })
       .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
 
-    var overview = $("<p></p>").text(movie.overview);
+    var overview = $("<p/>").text(movie.overview);
 
     // append everything to itemView, along with an <hr/>
-    var itemView = $("<li></li>")
+    var itemView = $("<li/>")
       .append(title)
       .append(overview)
       .append(button);
@@ -131,9 +123,14 @@ function render() {
   
 }
 
-
 // When the HTML document is ready, we call the discoverMovies function,
 // and pass the render function as its callback
 $(document).ready(function() {
+  $("#form-search").submit(function(evt) {
+    evt.preventDefault();
+    var query = $("#form-search input[name=query]").val();
+    searchMovies(query, render);
+  });
+
   discoverMovies(render);
 });
