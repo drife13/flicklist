@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  $("#form-search").submit(function(evt) {
+    // first, we cancel the default action (which would leave the page)
+    evt.preventDefault();
+
+    // figure out what the user typed
+    var searchTerm = $("#form-search input[name=query]").val();
+
+    // TODO 8c invoke the searchMovies function,
+    // passing in the search term, and render as the callback
+    searchMovies(searchTerm, render);
+  });
+  
+  // even though we are adding the search form, we still want to fetch
+  // immediately here on doc ready so that the user sees some content initially
   discoverMovies(render);
 });
 
