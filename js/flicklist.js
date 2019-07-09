@@ -106,12 +106,12 @@ function render() {
   // insert browse items
   model.browseItems.forEach(function(movie) {
 
-    // TODO 2d continued
+    // TODO 2d continued (DONE)
     // style this list item to look like the demo
     // You'll also need to make changes in index.html.
     // use the following BS classes:
     // "list-group", "list-group-item", btn", "btn-primary", 
-
+    
     var title = $("<h4/>").text(movie.original_title);
 
     var button = $("<button/>")
@@ -120,12 +120,13 @@ function render() {
         model.watchlistItems.push(movie);
         render();
       })
-      .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
+      .prop("disabled", model.watchlistItems.indexOf(movie) !== -1)
+      .attr("class", "btn btn-primary");
 
-    var overview = $("<p/>").text(movie.overview);
+    var overview = $("<p></p>").text(movie.overview);
 
     // append everything to itemView, along with an <hr/>
-    var itemView = $("<li/>")
+    var itemView = $("<li></li>")
       .append(title)
       .append(overview)
       .append(button);
@@ -133,8 +134,9 @@ function render() {
     // append the itemView to the list
     $("#section-browse ul").append(itemView);
   });
-  
+
 }
+
 
 // When the HTML document is ready, we call the discoverMovies function,
 // and pass the render function as its callback
