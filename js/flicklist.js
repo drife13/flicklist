@@ -71,14 +71,15 @@ function render() {
     var title = $("<h6/>").text(movie.original_title);
 
     var panelHeading = $("<div/>")
-      .append(title)
-      .attr("class panel-heading");
+    .attr("class", "panel-heading")
+    .append(title);      
 
     // TODO 1 
     // add an "I watched it" button and append it below the title
     // Clicking should remove this movie from the watchlist and re-render
     var button = $("<button/>")
       .text("I watched it")
+      .attr("class", "btn btn-danger")
       .click(function() {
         model.watchlistItems.splice(
           model.watchlistItems.indexOf(movie),1
@@ -89,14 +90,14 @@ function render() {
     
     // TODO 2i
     // apply the classes "btn btn-danger" to the "I watched it button"
-    button.addClass("btn btn-danger");
-
+    
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
     var panelbody = $("<div/>")
-      .append(button)
-      .attr("class panel-body");
+      .attr("class", "panel-body")  
+      .append(button);
+      
 
     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
