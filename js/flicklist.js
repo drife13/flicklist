@@ -123,15 +123,16 @@ function render() {
       .prop("disabled", model.watchlistItems.indexOf(movie) !== -1)
       .attr("class", "btn btn-primary");
 
-    var overview = $("<p></p>").text(movie.overview);
+    var overview = $("<p/>").text(movie.overview);
 
     // append everything to itemView, along with an <hr/>
-    var itemView = $("<li></li>")
+    var itemView = $("<li/>")
+      .attr("class", "list-group-item")
       .append(title)
       .append(overview)
       .append(button);
-      
-    // append the itemView to the list
+
+      // append the itemView to the list
     $("#section-browse ul").append(itemView);
   });
 
