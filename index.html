@@ -32,7 +32,7 @@
     <p class="text-muted">Keep a list of all the movies you've been meaning to watch.</p>
   </header>
 
-  <div class="main-content">
+  <div class="main-content container-fluid">
     <!--
     TODO 3a
     put the rest of the content (both sections) inside a div with class "row", 
@@ -44,8 +44,8 @@
     unless the user is on a tablet or mobile phone, in which case, each section should
     fill the entire width, with the watchlist first and the browse list below.
     -->
-    <div class="row container-fluid">
-      <section id="section-watchlist">
+    <div class="row">
+      <section id="section-watchlist" class="col-md-5">
         <header>
           <h2>My Watchlist</h2>
           <hr/>
@@ -58,7 +58,7 @@
         <ul class="list-inline"></ul>
       </section>
 
-      <section id="section-browse">
+      <section id="section-browse" class="col-md-7">
         <header>
           <h2>Browse Movies</h2>
 
