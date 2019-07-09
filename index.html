@@ -64,26 +64,30 @@
         <h2>Browse Movies</h2>
 
         <!--
-        TODO 2e
-        Style this form and its inputs to look like the demo.
-        Use the following classes (google them and find some examples):
-        "input-group", "form-control", "input-group-btn", "btn", "btn-primary"
+          TODO 2e (DONE)
+          Style this form and its inputs to look like the demo.
+          Use the following classes (google them and find some examples):
+          "input-group", "form-control", "input-group-btn", "btn", "btn-primary"
+          -->
+          <form id="form-search">
+            <div class="input-group">
+              <input type="text" class="form-control" name="query"/>
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary" value="Search By Title"/>
+              </span>
+            </div>
+          </form>
+  
+        </header>
+  
+        <!-- 
+        TODO 2d (DONE)
+        Style this list to look like the demo.
+        You will also have to make change in flicklist.js inside the render function
+        Use the following styles:
+        "list-group", "list-group-item", "btn", "btn-primary", 
         -->
-        <form id="form-search">
-          <input type="text" name="query"/>
-          <input type="submit" value="Search By Title"/>
-        </form>
-
-      </header>
-
-      <!-- 
-      TODO 2d
-      Style this list to look like the demo.
-      You will also have to make change in flicklist.js inside the render function
-      Use the following styles:
-      "list-group", "list-group-item", "btn", "btn-primary", 
-      -->
-      <ul></ul>
+        <ul class="list-group"></ul>
     </section>
 
   </div>
