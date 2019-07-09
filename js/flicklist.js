@@ -103,7 +103,7 @@ function render() {
     var itemView = $("<li/>")
       .append(panelHeading)
       .append(panelBody)
-      .attr("class", "item-watchlist panel panel-default");
+      .attr("class", "panel panel-default");
 
     $("#section-watchlist ul").append(itemView);
   });
