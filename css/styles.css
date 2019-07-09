@@ -37,7 +37,9 @@ and should be 10px below the neighbor element above it
 TODO 3c
 Apply text-align: center; to the watchlist
 */
-
+#section-watchlist ul {
+	text-align: center;
+}
 
 
 .main-content {
