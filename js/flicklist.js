@@ -94,6 +94,9 @@ function render() {
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
+    // var img = $("<img/>")
+    //   .attr("src",)
+
     var panelBody = $("<div/>")
       .attr("class", "panel-body")  
       .append(button);
