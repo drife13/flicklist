@@ -71,8 +71,8 @@ function render() {
     var title = $("<h6/>").text(movie.original_title);
 
     var panelHeading = $("<div/>")
-    .attr("class", "panel-heading")
-    .append(title);      
+      .attr("class", "panel-heading")
+      .append(title);    
 
     // TODO 1 
     // add an "I watched it" button and append it below the title
@@ -94,17 +94,16 @@ function render() {
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
-    var panelbody = $("<div/>")
+    var panelBody = $("<div/>")
       .attr("class", "panel-body")  
       .append(button);
-      
-
+    
     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
     var itemView = $("<li/>")
+      .attr("class", "panel panel-default")
       .append(panelHeading)
-      .append(panelBody)
-      .attr("class", "panel panel-default");
+      .append(panelBody);
 
     $("#section-watchlist ul").append(itemView);
   });
