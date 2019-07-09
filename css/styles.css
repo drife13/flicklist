@@ -5,7 +5,10 @@ TODO 2c
 Customize the .jumbotron class to have centered text instead of left-aligned
 Also change its bottom margin to 1%
 */
-
+.jumbotron {
+	text-align: center;
+	margin-bottom: 1%;
+}
 
 /*
 TODO 2h

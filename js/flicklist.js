@@ -83,6 +83,8 @@ function render() {
         render();
     })
     
+    title.append(button);
+    
     // TODO 2i
     // apply the classes "btn btn-danger" to the "I watched it button"
     button.addClass("btn btn-danger");
