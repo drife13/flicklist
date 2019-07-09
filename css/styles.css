@@ -28,9 +28,9 @@ TODO 2j
 The "I watched it" button should fill the entire width of its container, 
 and should be 10px below the neighbor element above it
 */
-#section-watchlist button {
+#section-watchlist ul li button {
 	width: 100%;
-	margin: 10px 0px 0px 0px;
+	margin-top: 10px;
 }
 
 /*
