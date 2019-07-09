@@ -70,6 +70,10 @@ function render() {
   model.watchlistItems.forEach(function(movie) {
     var title = $("<h6/>").text(movie.original_title);
 
+    var panelHeading = $("<div/>")
+      .append(title)
+      .attr("class panel-heading");
+
     // TODO 1 
     // add an "I watched it" button and append it below the title
     // Clicking should remove this movie from the watchlist and re-render
@@ -92,12 +96,15 @@ function render() {
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
-    
+    var panelbody = $("<div/>")
+      .append(button)
+      .attr("class panel-body");
 
     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
     var itemView = $("<li/>")
-      .append(title)
+      .append(panelHeading)
+      .append(panelBody)
       .attr("class", "item-watchlist");
 
     $("#section-watchlist ul").append(itemView);
