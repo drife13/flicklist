@@ -65,30 +65,3 @@ section header {
 section {
 	padding: 2%;
 }
-
-
-/*
-TODO 5
-Delete everything else below! 
-The Bootstrap classes have made this stuff no longer relevant
-*/
-
-ul {
-	padding-left: 0px;
-}
-
-button:disabled {
-	opacity: 0.5;
-}
-
-button, input[type="submit"] {
-	padding: 10px;
-	background: orange;
-	border-width: 0px;
-	color: white;
-}
-
-#section-browse li {
-	margin-bottom: 40px;
-	list-style: none;
-}
