@@ -12,8 +12,8 @@ var api = {
   posterUrl: function(movie) {
     // TODO 4b
     // implement this function
-
-    return "http://images5.fanpop.com/image/photos/25100000/movie-poster-rapunzel-and-eugene-25184488-300-450.jpg" 
+    var baseImageUrl = "http://image.tmdb.org/t/p/w300/";
+    return baseImageUrl + movie.poster_path; 
   }
 }
 
@@ -94,11 +94,13 @@ function render() {
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
-    // var img = $("<img/>")
-    //   .attr("src",)
+    var posterImg = $("<img/>")
+      .attr("src",api.posterUrl(movie))
+      .attr("class","img-responsive");
 
     var panelBody = $("<div/>")
       .attr("class", "panel-body")  
+      .append(posterImg)
       .append(button);
     
     // TODO 2g
@@ -106,7 +108,7 @@ function render() {
     var itemView = $("<li/>")
       .attr("class", "panel panel-default")
       .append(panelHeading)
-      .append(panelBody);
+      .append(panelBody);      
 
     $("#section-watchlist ul").append(itemView);
   });
