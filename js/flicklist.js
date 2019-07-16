@@ -36,6 +36,7 @@ function discoverMovies(callback, keywords) {
     url: api.root + "/discover/movie",
     data: {
       api_key: api.token,
+      with_keywords: keywords
     },
     success: function(response) {
       model.browseItems = response.results;
@@ -87,15 +88,17 @@ function searchMovies(query, callback) {
   // 1) the callback 
   // 2) the string of keywords
 
-
   $.ajax({
-    url: api.root + "/search/movie",
+    url: api.root + "/search/keyword",
     data: {
       api_key: api.token,
       query: query
     },
     success: function(response) {
+      let keywordIDs = response.results.map(r => r.id);
+      let keywordString = keywordIDs.join('|');
       console.log(response);
+      discoverMovies(callback,keywordString);
     }
   });
 }
